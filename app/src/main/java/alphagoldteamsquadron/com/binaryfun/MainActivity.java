@@ -44,7 +44,7 @@ public class MainActivity extends ActionBarActivity {
     //Ran when button is clicked
     public void startGame(View view) {
         Intent intent = new Intent(this, BinaryToDecimal.class);
-        String message = "Bananas!";
+        String message = "Bananas!!!";
         //This is how we pass data to new activities
         intent.putExtra(EXTRA_MESSAGE, message);
         //Starts binaryToDecimal activity
