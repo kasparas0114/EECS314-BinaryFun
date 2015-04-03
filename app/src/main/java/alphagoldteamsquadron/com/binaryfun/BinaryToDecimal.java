@@ -6,11 +6,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 
 public class BinaryToDecimal extends Activity {
+    
+    private static int current = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,34 +27,76 @@ public class BinaryToDecimal extends Activity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         // Create the text view
-        TextView textView = new TextView(this);
+        /*TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(message);
 
         // Set the text view as the activity layout
-        setContentView(textView);
+        setContentView(textView);*/
     }
 
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_binary_to_decimal, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void onToggleClicked(View view) {
+        boolean on = ((ToggleButton) view).isChecked();
+        
+        if (on) {
+            //toggleButton is 1
+            switch (view.getId()) {
+                case R.id.toggleButton128:
+                    current += 128;
+                    break;
+                case R.id.toggleButton64:
+                    current += 64;
+                    break;
+                case R.id.toggleButton32:
+                    current += 32;
+                    break;
+                case R.id.toggleButton16:
+                    current += 16;
+                    break;
+                case R.id.toggleButton8:
+                    current += 8;
+                    break;
+                case R.id.toggleButton4:
+                    current += 4;
+                    break;
+                case R.id.toggleButton2:
+                    current += 2;
+                    break;
+                case R.id.toggleButton1:
+                    current += 1;
+                    break;
+            }
+        } else {
+            //toggleButton is 0
+            switch (view.getId()) {
+                case R.id.toggleButton128:
+                    current -= 128;
+                    break;
+                case R.id.toggleButton64:
+                    current -= 64;
+                    break;
+                case R.id.toggleButton32:
+                    current -= 32;
+                    break;
+                case R.id.toggleButton16:
+                    current -= 16;
+                    break;
+                case R.id.toggleButton8:
+                    current -= 8;
+                    break;
+                case R.id.toggleButton4:
+                    current -= 4;
+                    break;
+                case R.id.toggleButton2:
+                    current -= 2;
+                    break;
+                case R.id.toggleButton1:
+                    current -= 1;
+                    break;
+            }
         }
 
-        return super.onOptionsItemSelected(item);
-    }*/
+        TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
+        currentText.setText(Integer.toString(current));
+    }
 }
