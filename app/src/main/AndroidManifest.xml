@@ -18,7 +18,8 @@
         </activity>
         <activity
             android:name=".BinaryToDecimal"
-            android:label="@string/title_activity_binary_to_decimal">
+            android:label="@string/title_activity_binary_to_decimal"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 
