@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -6,157 +6,271 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="alphagoldteamsquadron.com.binaryfun.BinaryToDecimal">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <ToggleButton
-        android:id="@+id/toggleButton128"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton64"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_alignTop="@+id/toggleButton128"
-        android:layout_toRightOf="@+id/toggleButton128"
-        android:layout_toEndOf="@+id/toggleButton128" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton32"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_alignTop="@+id/toggleButton64"
-        android:layout_toRightOf="@+id/toggleButton64"
-        android:layout_toEndOf="@+id/toggleButton64" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton16"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_alignTop="@+id/toggleButton32"
-        android:layout_toRightOf="@+id/toggleButton32"
-        android:layout_toEndOf="@+id/toggleButton32" />
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+        <!-- shrinkColumns and stretchColumns make the table expand to the whole width.
+             I'm not sure why, but let's roll with it. -->
 
-    <ToggleButton
-        android:id="@+id/toggleButton8"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_alignTop="@+id/toggleButton32"
-        android:layout_toRightOf="@+id/toggleButton16"
-        android:layout_toEndOf="@+id/toggleButton16" />
+    <!-- Row containing the target and current value text labels -->
+    <TableRow>
 
-    <ToggleButton
-        android:id="@+id/toggleButton4"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_alignTop="@+id/toggleButton8"
-        android:layout_toRightOf="@+id/toggleButton8"
-        android:layout_toEndOf="@+id/toggleButton8" />
+            <TextView
+                android:layout_span="4"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Target Value"
+                android:id="@+id/textViewTargetValueLabel" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton2"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_alignTop="@+id/toggleButton4"
-        android:layout_toRightOf="@+id/toggleButton4"
-        android:layout_toEndOf="@+id/toggleButton4" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton1"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textOn="1"
-        android:textOff="0"
-        android:onClick="onToggleClicked"
-        android:layout_alignTop="@+id/toggleButton2"
-        android:layout_toRightOf="@+id/toggleButton2"
-        android:layout_toEndOf="@+id/toggleButton2" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Current Value"
-            android:id="@+id/textViewCurrentValueLabel"
-            android:layout_above="@+id/toggleButton64"
-            android:layout_alignLeft="@+id/toggleButton64"
-            android:layout_alignStart="@+id/toggleButton64" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="0"
-            android:id="@+id/textViewCurrentValue"
-            android:layout_marginBottom="30dp"
-            android:layout_above="@+id/textViewCurrentValueLabel"
-            android:layout_alignLeft="@+id/toggleButton32"
-            android:layout_alignStart="@+id/toggleButton32" />
+            <TextView
+                android:layout_span="4"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Current Value"
+                android:id="@+id/textViewCurrentValueLabel" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="00:00"
-            android:id="@+id/textViewTimer"
-            android:layout_marginBottom="34dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+    </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Time: "
-            android:id="@+id/textViewTimerLabel"
-            android:layout_alignTop="@+id/textViewTimer"
-            android:layout_alignRight="@+id/toggleButton8"
-            android:layout_alignEnd="@+id/toggleButton8" />
+    <!-- Row containing the target and current values themselves -->
+    <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0"
+                android:layout_span="4"
+                android:gravity="center"
+                android:id="@+id/textViewTargetValue"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Target Value"
-            android:id="@+id/textViewTargetValueLabel"
-            android:layout_above="@+id/toggleButton4"
-            android:layout_alignRight="@+id/toggleButton1"
-            android:layout_alignEnd="@+id/toggleButton1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="0"
-            android:id="@+id/textViewTargetValue"
-            android:layout_alignTop="@+id/textViewCurrentValue"
-            android:layout_alignRight="@+id/toggleButton2"
-            android:layout_alignEnd="@+id/toggleButton2" />
-    </RelativeLayout>
 
-</RelativeLayout>
+            <TextView
+                android:layout_span="4"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0"
+                android:id="@+id/textViewCurrentValue"
+                />
+    </TableRow>
+
+     <!-- Row containing the toggle buttons -->
+     <TableRow
+         android:layout_marginTop="42dp">
+         <ToggleButton
+             android:id="@+id/toggleButton128"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_centerVertical="true"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentStart="true" />
+
+         <ToggleButton
+             android:id="@+id/toggleButton64"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_alignTop="@+id/toggleButton128"
+             android:layout_toRightOf="@+id/toggleButton128"
+             android:layout_toEndOf="@+id/toggleButton128" />
+
+         <ToggleButton
+             android:id="@+id/toggleButton32"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_alignTop="@+id/toggleButton64"
+             android:layout_toRightOf="@+id/toggleButton64"
+             android:layout_toEndOf="@+id/toggleButton64" />
+
+         <ToggleButton
+             android:id="@+id/toggleButton16"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_alignTop="@+id/toggleButton32"
+             android:layout_toRightOf="@+id/toggleButton32"
+             android:layout_toEndOf="@+id/toggleButton32" />
+
+         <ToggleButton
+             android:id="@+id/toggleButton8"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_alignTop="@+id/toggleButton32"
+             android:layout_toRightOf="@+id/toggleButton16"
+             android:layout_toEndOf="@+id/toggleButton16" />
+
+         <ToggleButton
+             android:id="@+id/toggleButton4"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_alignTop="@+id/toggleButton8"
+             android:layout_toRightOf="@+id/toggleButton8"
+             android:layout_toEndOf="@+id/toggleButton8" />
+
+         <ToggleButton
+             android:id="@+id/toggleButton2"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_alignTop="@+id/toggleButton4"
+             android:layout_toRightOf="@+id/toggleButton4"
+             android:layout_toEndOf="@+id/toggleButton4" />
+
+         <ToggleButton
+             android:id="@+id/toggleButton1"
+             android:layout_width="64dp"
+             android:layout_height="wrap_content"
+             android:textSize="@dimen/abc_text_size_large_material"
+             android:textOn="1"
+             android:textOff="0"
+             android:onClick="onToggleClicked"
+             android:layout_alignTop="@+id/toggleButton2"
+             android:layout_toRightOf="@+id/toggleButton2"
+             android:layout_toEndOf="@+id/toggleButton2" />
+
+     </TableRow>
+
+
+    <!-- Row containing the number labels beneath the buttons -->
+     <TableRow
+         android:layout_marginBottom="42dp">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="128"
+             android:id="@+id/label128"
+             android:gravity="center" />
+
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="64"
+             android:id="@+id/label64"
+             android:gravity="center" />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="32"
+             android:id="@+id/label32"
+             android:gravity="center" />
+
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="16"
+             android:id="@+id/label16"
+             android:gravity="center" />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="8"
+             android:id="@+id/label8"
+             android:gravity="center" />
+
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="4"
+             android:id="@+id/label4"
+             android:gravity="center" />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="2"
+             android:id="@+id/label2"
+             android:gravity="center" />
+
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:text="1"
+             android:id="@+id/label1"
+             android:gravity="center" />
+
+
+     </TableRow>
+
+
+    <!-- Row containing the timer -->
+     <TableRow>
+         <LinearLayout
+             android:layout_span="8"
+             android:gravity="center_horizontal">
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:text="Time: "
+                 android:id="@+id/textViewTimerLabel"
+                 android:layout_alignTop="@+id/textViewTimer" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:text="00:00"
+                 android:id="@+id/textViewTimer"
+                 android:layout_marginBottom="34dp" />
+         </LinearLayout>
+     </TableRow>
+
+     </TableLayout>
+
+</LinearLayout>
