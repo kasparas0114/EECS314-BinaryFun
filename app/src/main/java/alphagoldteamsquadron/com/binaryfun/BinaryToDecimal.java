@@ -1,20 +1,20 @@
 package alphagoldteamsquadron.com.binaryfun;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.os.SystemClock;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
+import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 
 public class BinaryToDecimal extends Activity {
-    
-    private static int current = 0;
+
+    private int value = 0;
+    private int current = 0;
+    private Chronometer chronometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +23,76 @@ public class BinaryToDecimal extends Activity {
         setContentView(R.layout.activity_binary_to_decimal);
 
         // Get the message from the intent
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+       // Intent intent = getIntent();
+        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-        // Create the text view
-        /*TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);
+        TextView valueText = (TextView)findViewById(R.id.textViewTargetValue);
+        valueText.setText(Integer.toString(value));
 
-        // Set the text view as the activity layout
-        setContentView(textView);*/
+        chronometer = (Chronometer)findViewById(R.id.chronometer);
+
+
+        initialize();
     }
 
+    public void initialize(){
+        //Disable buttons
+        Button b = (Button) findViewById(R.id.toggleButton1);
+        b.setEnabled(false);
+        b = (Button) findViewById(R.id.toggleButton2);
+        b.setEnabled(false);
+        b = (Button) findViewById(R.id.toggleButton4);
+        b.setEnabled(false);
+        b = (Button) findViewById(R.id.toggleButton8);
+        b.setEnabled(false);
+        b = (Button) findViewById(R.id.toggleButton16);
+        b.setEnabled(false);
+        b = (Button) findViewById(R.id.toggleButton32);
+        b.setEnabled(false);
+        b = (Button) findViewById(R.id.toggleButton64);
+        b.setEnabled(false);
+        b = (Button) findViewById(R.id.toggleButton128);
+        b.setEnabled(false);
+    }
+
+    public void startBinaryGame(View view) {
+        value = (int)(Math.random() * 256);
+        TextView valueText = (TextView)findViewById(R.id.textViewTargetValue);
+        valueText.setText(Integer.toString(value));
+        //Enable buttons
+        ToggleButton b = (ToggleButton) findViewById(R.id.toggleButton1);
+        b.setEnabled(true);
+        b.setChecked(false);
+        b = (ToggleButton) findViewById(R.id.toggleButton2);
+        b.setEnabled(true);
+        b.setChecked(false);
+        b = (ToggleButton) findViewById(R.id.toggleButton4);
+        b.setEnabled(true);
+        b.setChecked(false);
+        b = (ToggleButton) findViewById(R.id.toggleButton8);
+        b.setEnabled(true);
+        b.setChecked(false);
+        b = (ToggleButton) findViewById(R.id.toggleButton16);
+        b.setEnabled(true);
+        b.setChecked(false);
+        b = (ToggleButton) findViewById(R.id.toggleButton32);
+        b.setEnabled(true);
+        b.setChecked(false);
+        b = (ToggleButton) findViewById(R.id.toggleButton64);
+        b.setEnabled(true);
+        b.setChecked(false);
+        b = (ToggleButton) findViewById(R.id.toggleButton128);
+        b.setEnabled(true);
+        b.setChecked(false);
+
+        TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
+        currentText.setText("0");
+        current = 0;
+
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
+        //TODO change the start button somehow
+    }
     public void onToggleClicked(View view) {
         boolean on = ((ToggleButton) view).isChecked();
         
@@ -98,5 +156,15 @@ public class BinaryToDecimal extends Activity {
 
         TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
         currentText.setText(Integer.toString(current));
+
+        if(current == value) {
+            win();
+        }
+    }
+
+    public void win(){
+        chronometer.stop();
+        TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
+        currentText.setText("You win");
     }
 }
