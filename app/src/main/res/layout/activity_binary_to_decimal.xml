@@ -72,7 +72,7 @@
 
      <!-- Row containing the toggle buttons -->
      <TableRow
-         android:layout_marginTop="42dp">
+         android:layout_marginTop="32dp">
          <ToggleButton
              android:id="@+id/toggleButton128"
              android:layout_width="64dp"
@@ -174,7 +174,7 @@
 
     <!-- Row containing the number labels beneath the buttons -->
      <TableRow
-         android:layout_marginBottom="42dp">
+         android:layout_marginBottom="32dp">
 
          <TextView
              android:layout_width="wrap_content"
@@ -253,6 +253,13 @@
          <LinearLayout
              android:layout_span="8"
              android:gravity="center_horizontal">
+             <Chronometer
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:format="%s"
+                 android:textSize="40sp"
+                 android:id="@+id/chronometer"/>
+             <!--
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
@@ -266,11 +273,28 @@
                  android:layout_height="wrap_content"
                  android:textAppearance="?android:attr/textAppearanceLarge"
                  android:text="00:00"
-                 android:id="@+id/textViewTimer"
-                 android:layout_marginBottom="34dp" />
+                 android:id="@+id/textViewTimer" />
+                 -->
          </LinearLayout>
      </TableRow>
 
+      // Row with the start button
+     <TableRow>
+         <LinearLayout
+             android:layout_span="8"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center">
+             <Button
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/StartButton"
+                 android:text="Start Game"
+                 android:onClick="startBinaryGame"
+                 />
+         </LinearLayout>
+
+     </TableRow>
      </TableLayout>
 
 </LinearLayout>
