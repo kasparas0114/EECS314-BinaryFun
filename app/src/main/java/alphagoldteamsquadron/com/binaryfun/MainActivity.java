@@ -50,4 +50,14 @@ public class MainActivity extends ActionBarActivity {
         //Starts binaryToDecimal activity
         startActivity(intent);
     }
+
+    //Ran when button is clicked
+    public void startBinaryAdderGame(View view) {
+        Intent intent = new Intent(this, BinaryAdder.class);
+        String message = "Bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts binaryToDecimal activity
+        startActivity(intent);
+    }
 }
