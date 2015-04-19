@@ -19,12 +19,16 @@
         <activity
             android:name=".BinaryToDecimal"
             android:label="@string/title_activity_binary_to_decimal"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".BinaryAdder"
             android:label="@string/title_activity_binary_adder"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".HighScores"
+            android:label="@string/title_activity_high_scores" >
         </activity>
     </application>
 

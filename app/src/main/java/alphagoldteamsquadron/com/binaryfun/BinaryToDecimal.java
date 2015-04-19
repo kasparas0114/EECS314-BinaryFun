@@ -1,6 +1,9 @@
 package alphagoldteamsquadron.com.binaryfun;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.os.Bundle;
 import android.view.View;
@@ -9,28 +12,31 @@ import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 
 public class BinaryToDecimal extends Activity {
 
     private int value = 0;
     private int current = 0;
+    private int roundCount = 1;
     private Chronometer chronometer;
+    //Name of minigame goes here
+    public static final String SCORE_VALUE = "BinaryToDecimalValues";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_binary_to_decimal);
-
-        // Get the message from the intent
-       // Intent intent = getIntent();
-        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         TextView valueText = (TextView)findViewById(R.id.textViewTargetValue);
         valueText.setText(Integer.toString(value));
 
         chronometer = (Chronometer)findViewById(R.id.chronometer);
-
 
         initialize();
     }
@@ -56,10 +62,20 @@ public class BinaryToDecimal extends Activity {
     }
 
     public void startBinaryGame(View view) {
+        roundCount = 1;
+        roundReset();
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
+        Button start = (Button) findViewById(R.id.StartButton);
+        start.setEnabled(false);
+    }
+
+    public void roundReset(){
         value = (int)(Math.random() * 256);
         TextView valueText = (TextView)findViewById(R.id.textViewTargetValue);
         valueText.setText(Integer.toString(value));
-        //Enable buttons
+
+        //Enable buttons and set to false
         ToggleButton b = (ToggleButton) findViewById(R.id.toggleButton1);
         b.setEnabled(true);
         b.setChecked(false);
@@ -85,14 +101,14 @@ public class BinaryToDecimal extends Activity {
         b.setEnabled(true);
         b.setChecked(false);
 
+        TextView roundText = (TextView) findViewById(R.id.textViewRoundValue);
+        roundText.setText(Integer.toString(roundCount) + " of 5");
+
         TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
         currentText.setText("0");
         current = 0;
-
-        chronometer.setBase(SystemClock.elapsedRealtime());
-        chronometer.start();
-        //TODO change the start button somehow
     }
+
     public void onToggleClicked(View view) {
         boolean on = ((ToggleButton) view).isChecked();
         
@@ -163,8 +179,23 @@ public class BinaryToDecimal extends Activity {
     }
 
     public void win(){
-        chronometer.stop();
-        TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
-        currentText.setText("You win");
+
+        if(roundCount == 1){
+            chronometer.stop();
+            TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
+            currentText.setText("You win!");
+            Button start = (Button) findViewById(R.id.StartButton);
+            start.setEnabled(true);
+            int score = 20000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
+            new SaveScore(this, SCORE_VALUE, score);
+
+        }else {
+            roundCount++;
+            roundReset();
+
+        }
     }
+
+
+
 }
