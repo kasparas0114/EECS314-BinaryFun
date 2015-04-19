@@ -21,6 +21,11 @@
             android:label="@string/title_activity_binary_to_decimal"
             android:screenOrientation="landscape">
         </activity>
+        <activity
+            android:name=".BinaryAdder"
+            android:label="@string/title_activity_binary_adder"
+            android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>
