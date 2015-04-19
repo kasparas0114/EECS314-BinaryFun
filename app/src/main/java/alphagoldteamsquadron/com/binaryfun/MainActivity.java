@@ -1,5 +1,6 @@
 package alphagoldteamsquadron.com.binaryfun;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
     //Convention for keys is to put company name as prefix
     public final static String EXTRA_MESSAGE = "com.alphagoldteamsquadron.binaryfun.MESSAGE";
 
