@@ -22,52 +22,70 @@
     <!-- Row containing the target and current value text labels -->
     <TableRow>
 
-            <TextView
-                android:layout_span="4"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Target Value"
-                android:id="@+id/textViewTargetValueLabel" />
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Target Value"
+            android:id="@+id/textViewTargetValueLabel"
+            android:layout_column="1"
+            android:layout_span="2" />
 
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Round"
+            android:id="@+id/textViewRoundLabel"
+            android:layout_column="3"
+            android:layout_span="2" />
 
-
-
-            <TextView
-                android:layout_span="4"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Current Value"
-                android:id="@+id/textViewCurrentValueLabel" />
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Current Value"
+            android:id="@+id/textViewCurrentValueLabel"
+            android:layout_column="5"
+            android:layout_span="2" />
 
     </TableRow>
 
     <!-- Row containing the target and current values themselves -->
     <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="0"
-                android:layout_span="4"
-                android:gravity="center"
-                android:id="@+id/textViewTargetValue"
-                />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0"
+            android:gravity="center"
+            android:id="@+id/textViewTargetValue"
+            android:layout_column="1"
+            android:layout_span="2" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="1 of 5"
+            android:layout_span="2"
+            android:gravity="center"
+            android:id="@+id/textViewRoundValue"
+            android:layout_column="3" />
 
-            <TextView
-                android:layout_span="4"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="0"
-                android:id="@+id/textViewCurrentValue"
-                />
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0"
+            android:id="@+id/textViewCurrentValue"
+            android:layout_column="5"
+            android:layout_span="2" />
     </TableRow>
 
      <!-- Row containing the toggle buttons -->
@@ -259,22 +277,7 @@
                  android:format="%s"
                  android:textSize="40sp"
                  android:id="@+id/chronometer"/>
-             <!--
-             <TextView
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:textAppearance="?android:attr/textAppearanceLarge"
-                 android:text="Time: "
-                 android:id="@+id/textViewTimerLabel"
-                 android:layout_alignTop="@+id/textViewTimer" />
 
-             <TextView
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:textAppearance="?android:attr/textAppearanceLarge"
-                 android:text="00:00"
-                 android:id="@+id/textViewTimer" />
-                 -->
          </LinearLayout>
      </TableRow>
 
