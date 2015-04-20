@@ -75,12 +75,12 @@ public class BooleanFun extends Activity {
 
             chronometer.stop();
             lockButtons();
-            if(checkWinConditions()) { //TODO check winning conditions here
-                //TODO handle win event
+            if(checkWinConditions()) { // check winning conditions here
+                //handle win event
                 winLossText.setText("You Won! Great job!");
             }
             else {
-                //TODO handle loss
+                //handle loss
                 winLossText.setText("Not quite. Try another Round?");
             }
         }
@@ -376,7 +376,7 @@ public class BooleanFun extends Activity {
         )) {
             return false;
         }
-        else if(intStringToBool(buttonBoolOps[5].getText().toString()) != performBoolOp(
+        else if(intStringToBool(buttonBooleans[5].getText().toString()) != performBoolOp(
                 buttonBooleans[2].getText().toString(),
                 buttonBoolOps[1].getText().toString(),
                 buttonBooleans[3].getText().toString()
@@ -384,7 +384,7 @@ public class BooleanFun extends Activity {
             return false;
         }
         else {
-            return intStringToBool(buttonBoolOps[9].getText().toString()) == performBoolOp(
+            return intStringToBool(buttonBooleans[6].getText().toString()) == performBoolOp(
                     buttonBooleans[4].getText().toString(),
                     buttonBoolOps[2].getText().toString(),
                     buttonBooleans[5].getText().toString()
@@ -406,8 +406,7 @@ public class BooleanFun extends Activity {
     }
 
     //Convert an operator as a string to an enum type
-    public boolOpType boolOpStringToEnum(String boolOpString)
-    {
+    public boolOpType boolOpStringToEnum(String boolOpString) {
         switch(boolOpString)
         {
             case "XNOR":
@@ -429,13 +428,13 @@ public class BooleanFun extends Activity {
 
     //Set buttons to be nonClickable and have default text Color
     public void lockButtons() {
-        for(int i = 0 ; i < buttonBooleans.length; i++) {
-            buttonBooleans[i].setClickable(false);
-            buttonBooleans[i].setTextColor(defaultButtonTextColors);
+        for (Button buttonBoolean : buttonBooleans) {
+            buttonBoolean.setClickable(false);
+            buttonBoolean.setTextColor(defaultButtonTextColors);
         }
-        for(int i = 0 ; i < buttonBoolOps.length; i++) {
-            buttonBoolOps[i].setClickable(false);
-            buttonBoolOps[i].setTextColor(defaultButtonTextColors);
+        for (Button buttonBoolOp : buttonBoolOps) {
+            buttonBoolOp.setClickable(false);
+            buttonBoolOp.setTextColor(defaultButtonTextColors);
         }
     }
 }
