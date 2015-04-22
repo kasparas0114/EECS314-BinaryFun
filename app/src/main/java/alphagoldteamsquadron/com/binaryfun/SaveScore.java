@@ -78,7 +78,7 @@ public class SaveScore {
         for(int i = 0; i < 5; i++){
             String s = scores.get(i).replaceAll("[^0-9]","");
             if(score > Integer.parseInt(s)){
-                scores.add(i, name + "          " + score);
+                scores.add(i, name + score);
                 break;
             }
         }
@@ -96,8 +96,8 @@ public class SaveScore {
         scores.remove(index);
         //Save new high score table
         SharedPreferences.Editor editor = saveFile.edit();
-        editor.putStringSet(key, new HashSet<String>(scores));
-        editor.commit();
+        editor.putStringSet(key, new HashSet<>(scores));
+        editor.apply();
         displayScores();
     }
 
@@ -116,6 +116,6 @@ public class SaveScore {
         //Save new high score table
         SharedPreferences.Editor editor = saveFile.edit();
         editor.putStringSet(key, scores);
-        editor.commit();
+        editor.apply();
     }
 }
