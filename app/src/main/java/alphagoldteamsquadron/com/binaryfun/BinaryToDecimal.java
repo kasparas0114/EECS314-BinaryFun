@@ -172,13 +172,13 @@ public class BinaryToDecimal extends Activity {
 
     public void win(){
 
-        if(roundCount == 1){
+        if(roundCount == 5){
             chronometer.stop();
             TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
             currentText.setText("You win!");
             Button start = (Button) findViewById(R.id.StartButton);
             start.setEnabled(true);
-            int score = 20000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
+            int score = 200000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
             new SaveScore(this, SCORE_VALUE, score);
 
         }else {
