@@ -2,15 +2,7 @@ package alphagoldteamsquadron.com.binaryfun;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.view.View;
-import android.widget.Chronometer;
-import android.widget.TextView;
-import android.widget.ToggleButton;
-
-import org.w3c.dom.Text;
-
-import java.text.DecimalFormat;
+import android.webkit.WebView;
 
 
 /**
@@ -19,11 +11,15 @@ import java.text.DecimalFormat;
 public class LearnBinary extends Activity {
 
 
+    private WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_learn_binary);
 
+        webView = (WebView) findViewById(R.id.activity_main_binary_webview);
+        webView.loadUrl("file:///android_asset/learn_binary.html");
     }
 }

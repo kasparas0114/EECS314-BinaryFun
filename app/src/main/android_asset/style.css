@@ -1,0 +1,16 @@
+html{}
+h1{}
+
+.left{float:left}.right{float:right}
+.left,.right{margin:.5em}
+
+section{text-align:center}
+
+/* Used for color-coding things such as individual bits. */
+.a{color:red}
+.b{color:green}
+.c{color:blue}
+.d{color:purple}
+
+table{margin-left:auto;margin-right:auto;border-collapse:collapse;text-align:center;}
+table td, table th{border:1px solid #888;padding:.125em .25em}
