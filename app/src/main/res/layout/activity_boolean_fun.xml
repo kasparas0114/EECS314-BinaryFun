@@ -1,0 +1,188 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="alphagoldteamsquadron.com.binaryfun.BinaryToDecimal">
+
+
+
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+        <!-- shrinkColumns and stretchColumns make the table expand to the whole width.
+             I'm not sure why, but let's roll with it. -->
+
+        <!-- Row containing the target and current value text labels -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Time:"
+                android:id="@+id/BoolTimeLabel"
+                android:layout_column="0"
+                android:layout_span="6" />
+
+        </TableRow>
+        <TableRow android:layout_marginBottom="45dp">
+
+            <Chronometer
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format="%s"
+                android:textSize="30sp"
+                android:id="@+id/BoolChronometer"
+                android:layout_column="0"
+                android:layout_span="6" />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/BoolStartEndButton"
+                android:text="Start Game"
+                android:onClick="startBoolGame"
+                android:layout_column="9"
+                android:layout_span="6"
+                android:textOn="Done"
+                android:textOff="Start Game" />
+
+        </TableRow>
+
+        <TableRow>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/BoolButton0"
+                android:layout_column="0"
+                android:layout_span="3"
+                android:onClick="boolButtonClicked" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/BoolButton1"
+                android:layout_column="4"
+                android:layout_span="3"
+                android:onClick="boolButtonClicked" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/BoolButton2"
+                android:layout_column="8"
+                android:layout_span="3"
+                android:onClick="boolButtonClicked" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/BoolButton3"
+                android:layout_column="12"
+                android:layout_span="3"
+                android:onClick="boolButtonClicked" />
+        </TableRow>
+
+        <!-- Row containing the target and current values themselves -->
+
+        <TableRow>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nand"
+                android:id="@+id/BoolOpButton0"
+                android:layout_column="1"
+                android:layout_span="5"
+                android:onClick="boolOpButtonClicked" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOR"
+                android:id="@+id/BoolOpButton1"
+                android:layout_column="9"
+                android:layout_span="5"
+                android:onClick="boolOpButtonClicked" />
+        </TableRow>
+
+        <!-- Row containing the toggle buttons -->
+
+        <TableRow>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/BoolButton4"
+                android:layout_column="2"
+                android:layout_span="3"
+                android:onClick="boolButtonClicked" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/BoolButton5"
+                android:layout_column="10"
+                android:layout_span="3"
+                android:onClick="boolButtonClicked" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XOR"
+                android:id="@+id/BoolOpButton2"
+                android:layout_column="5"
+                android:layout_span="5"
+                android:onClick="boolOpButtonClicked" />
+
+        </TableRow>
+
+
+
+        <!-- Row containing the timer -->
+
+        <TableRow>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/BoolButton6"
+                android:layout_column="6"
+                android:layout_span="3"
+                android:onClick="boolButtonClicked" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="45dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/BoolWinLossLabel"
+                android:layout_span="15"
+                android:layout_column="0"
+                android:text=""
+                android:gravity="center" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

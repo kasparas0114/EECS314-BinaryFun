@@ -1,14 +1,14 @@
 package alphagoldteamsquadron.com.binaryfun;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
     //Convention for keys is to put company name as prefix
     public final static String EXTRA_MESSAGE = "com.alphagoldteamsquadron.binaryfun.MESSAGE";
 
@@ -48,6 +48,72 @@ public class MainActivity extends ActionBarActivity {
         //This is how we pass data to new activities
         intent.putExtra(EXTRA_MESSAGE, message);
         //Starts binaryToDecimal activity
+        startActivity(intent);
+    }
+
+    public void startHexGame(View view) {
+        Intent intent = new Intent(this, BinaryToHex.class);
+        startActivity(intent);
+    }
+
+    //Ran when button is clicked
+    public void startBinaryAdderGame(View view) {
+        Intent intent = new Intent(this, BinaryAdder.class);
+        String message = "Bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts binaryToDecimal activity
+        startActivity(intent);
+    }
+
+    //Ran when button is clicked
+    public void startBooleanTreeGame(View view) {
+        Intent intent = new Intent(this, BooleanFun.class);
+        String message = "Bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts binaryToDecimal activity
+        startActivity(intent);
+    }
+
+
+
+    public void startLearnBinary(View view) {
+        Intent intent = new Intent(this, LearnBinary.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
+        startActivity(intent);
+    }
+
+
+    public void startLearnRepresentations(View view) {
+        Intent intent = new Intent(this, LearnRepresentations.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
+        startActivity(intent);
+    }
+
+
+    public void startLearnArithmetic(View view) {
+        Intent intent = new Intent(this, LearnArithmetic.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
+        startActivity(intent);
+    }
+
+
+    public void startLearnLogic(View view) {
+        Intent intent = new Intent(this, LearnLogic.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
         startActivity(intent);
     }
 }
