@@ -105,7 +105,18 @@
 
             <Button
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
+=======
+                android:layout_height="50dp"
+                android:text="Decimal to Hexadecimal"
+                android:id="@+id/buttonPlayHexGame"
+                android:onClick="startHexGame" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+>>>>>>> implemented decimal to hexadecimal conversion game
                 android:text="Boolean Operator Tree"
                 android:id="@+id/buttonPlayBooleanTree"
                 android:onClick="startBooleanTreeGame" />

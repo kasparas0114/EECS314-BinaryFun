@@ -51,6 +51,11 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    public void startHexGame(View view) {
+        Intent intent = new Intent(this, BinaryToHex.class);
+        startActivity(intent);
+    }
+
     //Ran when button is clicked
     public void startBinaryAdderGame(View view) {
         Intent intent = new Intent(this, BinaryAdder.class);
