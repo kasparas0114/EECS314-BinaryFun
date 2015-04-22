@@ -19,12 +19,12 @@
         <activity
             android:name=".BinaryToDecimal"
             android:label="@string/title_activity_binary_to_decimal"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="userLandscape">
         </activity>
         <activity
             android:name=".BinaryAdder"
             android:label="@string/title_activity_binary_adder"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="userLandscape">
         </activity>
         <activity
             android:name=".HighScores"
@@ -32,7 +32,24 @@
         </activity>
         <activity
             android:name=".BooleanFun"
-            android:label="@string/title_activity_boolean_fun" >
+            android:label="@string/title_activity_boolean_fun"
+            android:screenOrientation="userPortrait">
+        </activity>
+        <activity
+            android:name=".LearnBinary"
+            android:label="@string/title_activity_learn_binary">
+        </activity>
+        <activity
+            android:name=".LearnRepresentations"
+            android:label="@string/title_activity_learn_representations">
+        </activity>
+        <activity
+            android:name=".LearnArithmetic"
+            android:label="@string/title_activity_learn_arithmetic">
+        </activity>
+        <activity
+            android:name=".LearnLogic"
+            android:label="@string/title_activity_learn_logic">
         </activity>
     </application>
 

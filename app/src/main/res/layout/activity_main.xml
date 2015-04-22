@@ -42,10 +42,35 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="New Button"
-                android:id="@+id/button2"
-                android:layout_gravity="center_horizontal" />
+                android:layout_height="wrap_content"
+                android:text="Binary &amp; Hexadecimal"
+                android:id="@+id/buttonLearnBinary"
+                android:layout_gravity="center_horizontal"
+                android:onClick="startLearnBinary"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Integers &amp; Floating Points"
+                android:id="@+id/buttonLearnRepresentations"
+                android:layout_gravity="center_horizontal"
+                android:onClick="startLearnRepresentations"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Arithmetic"
+                android:id="@+id/buttonLearnArithmetic"
+                android:layout_gravity="center_horizontal"
+                android:onClick="startLearnArithmetic"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Boolean Logic"
+                android:id="@+id/buttonLearnLogic"
+                android:layout_gravity="center_horizontal"
+                android:onClick="startLearnLogic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -66,21 +91,21 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:text="Binary Adder"
                 android:id="@+id/buttonPlayBinaryAdder"
                 android:onClick="startBinaryAdderGame" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:text="Decimal to Binary"
                 android:id="@+id/button"
                 android:onClick="startGame" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:text="Boolean Operator Tree"
                 android:id="@+id/buttonPlayBooleanTree"
                 android:onClick="startBooleanTreeGame" />
