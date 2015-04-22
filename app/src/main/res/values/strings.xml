@@ -8,12 +8,10 @@
     <string name="title_activity_binary_adder">Binary Adder</string>
     <string name="title_activity_high_scores">HighScores</string>
     <string name="title_activity_boolean_fun">BooleanFun</string>
-<<<<<<< HEAD
     <string name="title_activity_learn_binary">LearnBinary</string>
     <string name="title_activity_learn_representations">LearnRepresentations</string>
     <string name="title_activity_learn_arithmetic">LearnArithmetic</string>
     <string name="title_activity_learn_logic">LearnLogic</string>
-=======
 
     <string-array name = "hex_array">
         <item>0</item>
@@ -33,5 +31,4 @@
         <item>E</item>
         <item>F</item>
     </string-array>
->>>>>>> implemented decimal to hexadecimal conversion game
 </resources>
