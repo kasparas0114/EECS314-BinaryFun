@@ -2,7 +2,6 @@ package alphagoldteamsquadron.com.binaryfun;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -55,6 +54,16 @@ public class MainActivity extends Activity {
     //Ran when button is clicked
     public void startBinaryAdderGame(View view) {
         Intent intent = new Intent(this, BinaryAdder.class);
+        String message = "Bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts binaryToDecimal activity
+        startActivity(intent);
+    }
+
+    //Ran when button is clicked
+    public void startBooleanTreeGame(View view) {
+        Intent intent = new Intent(this, BooleanFun.class);
         String message = "Bananas!!!";
         //This is how we pass data to new activities
         intent.putExtra(EXTRA_MESSAGE, message);
