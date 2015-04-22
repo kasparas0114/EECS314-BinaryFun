@@ -22,6 +22,11 @@
             android:screenOrientation="userLandscape">
         </activity>
         <activity
+            android:name=".BinaryToHex"
+            android:label="@string/title_activity_binary_to_hexadecimal"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
             android:name=".BinaryAdder"
             android:label="@string/title_activity_binary_adder"
             android:screenOrientation="userLandscape">

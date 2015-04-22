@@ -1,0 +1,214 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="alphagoldteamsquadron.com.binaryfun.BinaryToHex">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+        <!-- shrinkColumns and stretchColumns make the table expand to the whole width.
+             I'm not sure why, but let's roll with it. -->
+
+        <!-- Row containing the target and current value text labels -->
+        <TableRow>
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Target Value"
+                android:id="@+id/textViewTargetValueLabel"
+                android:layout_column="1"
+                android:layout_span="2" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Round"
+                android:id="@+id/textViewRoundLabel"
+                android:layout_column="3"
+                android:layout_span="2" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Current Value"
+                android:id="@+id/textViewCurrentValueLabel"
+                android:layout_column="5"
+                android:layout_span="2" />
+
+        </TableRow>
+
+        <!-- Row containing the target and current values themselves -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0"
+                android:gravity="center"
+                android:id="@+id/textViewTargetValue"
+                android:layout_column="1"
+                android:layout_span="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="1 of 5"
+                android:layout_span="2"
+                android:gravity="center"
+                android:id="@+id/textViewRoundValue"
+                android:layout_column="3" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0"
+                android:id="@+id/textViewCurrentValue"
+                android:layout_column="5"
+                android:layout_span="2" />
+        </TableRow>
+
+        <!-- Row containing the spinners -->
+        <TableRow
+            android:layout_marginTop="32dp"
+            android:layout_weight="4">
+            <Spinner
+                android:id="@+id/spinner4"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/hex_array"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/hex_array"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/spinner4"
+                android:layout_toRightOf="@+id/spinner4"
+                android:layout_toEndOf="@+id/spinner4"/>
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/hex_array"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/spinner3"
+                android:layout_toRightOf="@+id/spinner3"
+                android:layout_toEndOf="@+id/spinner3"/>
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/hex_array"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/spinner2"
+                android:layout_toRightOf="@+id/spinner2"
+                android:layout_toEndOf="@+id/spinner2"/>
+
+        </TableRow>
+
+        <!-- Row containing the number labels beneath the spinners -->
+        <TableRow
+            android:layout_marginBottom="32dp"
+            android:layout_weight="4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="4096"
+                android:id="@+id/label4096"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="256"
+                android:id="@+id/label256"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="16"
+                android:id="@+id/label16"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="1"
+                android:id="@+id/label1"
+                android:gravity="center" />
+        </TableRow>
+
+        <!-- Row containing the timer -->
+        <TableRow>
+            <LinearLayout
+                android:layout_span="8"
+                android:gravity="center_horizontal">
+                <Chronometer
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:format="%s"
+                    android:textSize="40sp"
+                    android:id="@+id/chronometer"/>
+
+            </LinearLayout>
+        </TableRow>
+
+        <!-- Row with the start button -->
+        <TableRow>
+            <LinearLayout
+                android:layout_span="8"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/StartButton"
+                    android:text="Start Game"
+                    android:onClick="startGame"
+                    />
+            </LinearLayout>
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
