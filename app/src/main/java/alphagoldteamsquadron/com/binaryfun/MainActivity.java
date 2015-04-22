@@ -70,4 +70,45 @@ public class MainActivity extends Activity {
         //Starts binaryToDecimal activity
         startActivity(intent);
     }
+
+
+
+    public void startLearnBinary(View view) {
+        Intent intent = new Intent(this, LearnBinary.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
+        startActivity(intent);
+    }
+
+
+    public void startLearnRepresentations(View view) {
+        Intent intent = new Intent(this, LearnRepresentations.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
+        startActivity(intent);
+    }
+
+
+    public void startLearnArithmetic(View view) {
+        Intent intent = new Intent(this, LearnArithmetic.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
+        startActivity(intent);
+    }
+
+
+    public void startLearnLogic(View view) {
+        Intent intent = new Intent(this, LearnLogic.class);
+        String message = "Learn about bananas!!!";
+        //This is how we pass data to new activities
+        intent.putExtra(EXTRA_MESSAGE, message);
+        //Starts activity
+        startActivity(intent);
+    }
 }

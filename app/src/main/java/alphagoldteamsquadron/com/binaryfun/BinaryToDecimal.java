@@ -1,9 +1,6 @@
 package alphagoldteamsquadron.com.binaryfun;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +8,6 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 
 public class BinaryToDecimal extends Activity {
