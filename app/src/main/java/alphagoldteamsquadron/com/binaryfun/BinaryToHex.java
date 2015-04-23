@@ -168,7 +168,7 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
             currentText.setText("You win!");
             Button start = (Button) findViewById(R.id.StartButton);
             start.setEnabled(true);
-            int score = 20000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
+            int score = 200000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
             new SaveScore(this, SCORE_VALUE, score);
 
         }else {
