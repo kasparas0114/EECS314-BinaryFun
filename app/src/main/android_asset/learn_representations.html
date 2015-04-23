@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>Binary Fun!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<h1>Learn About Integers &amp; Floating Points</h1>
+
+<p>Integers are generally represented in MIPS as 32 binary digits (&ldquo;bits&rdquo;). 32-bit numbers can also be represented as eight hexadecimal characters. If all bits are used for the value of a number, it can only represent non-negative numbers (which means it&rsquo;s an unsigned value). Unsigned 32-bit integers can represent numbers in the range [0, 2<sup>32</sup>&ndash;1]. Signed integers, on the other hand, considers the largest-value bit to be negative. These can represent numbers in the range [-2<sup>31</sup>, 2<sup>31</sup>-1]. The equation and table below demonstrates a signed 4-bit number.</p>
+
+<section>
+	<span class="a">1</span><span class="b">0</span><span class="c">1</span><span class="d">1</span><sub>binary</sub> = 
+	<span class="a">-1×2<sup>3</sup></span> + 
+	<span class="b">0×2<sup>2</sup></span> + 
+	<span class="c">1×2<sup>1</sup></span> + 
+	<span class="d">1×2<sup>0</sup></span> 
+	= -5<sub>decimal</sub>
+</section>
+
+<table>
+	<tr><th>Binary</th><th>Decimal</th></tr>
+	<tr><td>1000</td>	<td>-8</td></tr>
+	<tr><td>1001</td>	<td>-7</td></tr>
+	<tr><td>1010</td>	<td>-6</td></tr>
+	<tr><td>1011</td>	<td>-5</td></tr>
+	<tr><td>1100</td>	<td>-4</td></tr>
+	<tr><td>1101</td>	<td>-3</td></tr>
+	<tr><td>1110</td>	<td>-2</td></tr>
+	<tr><td>1111</td>	<td>-1</td></tr>
+	<tr><td>0000</td>	<td>0</td></tr>
+	<tr><td>0001</td>	<td>1</td></tr>
+	<tr><td>0010</td>	<td>2</td></tr>
+	<tr><td>0011</td>	<td>3</td></tr>
+	<tr><td>0100</td>	<td>4</td></tr>
+	<tr><td>0101</td>	<td>5</td></tr>
+	<tr><td>0110</td>	<td>6</td></tr>
+	<tr><td>0111</td>	<td>7</td></tr>
+</table>
+
+<p>Positive signed numbers are identical to positive unsigned integers. Signed numbers can be converted from positive to negative by inverting each bit (changing zeros to ones and ones to zeros) and then adding 1 to the value. Conversion from negative to positive is the same in reverse.</p>
+
+<p>(Floating point)</p>
+
+<p>Overflow occurs when trying to (for instance, trying to represent a number greater than 15 as a 4-bit integer). </p>
+
+</body>
+</html>

@@ -106,6 +106,13 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Decimal to Hexadecimal"
+                android:id="@+id/buttonPlayHexGame"
+                android:onClick="startHexGame" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Boolean Operator Tree"
                 android:id="@+id/buttonPlayBooleanTree"
                 android:onClick="startBooleanTreeGame" />

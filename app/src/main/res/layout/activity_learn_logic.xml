@@ -6,11 +6,9 @@
     tools:context="alphagoldteamsquadron.com.binaryfun.LearnLogic">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:id="@+id/statusText"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Learn logic"/>
+    <WebView
+        android:id="@+id/activity_main_logic_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

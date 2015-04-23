@@ -25,8 +25,7 @@ public class HighScores extends Activity {
         //Gets high scores for game
         SharedPreferences saveFile = getSharedPreferences(message, Context.MODE_PRIVATE);
 
-        List<String> scores = new ArrayList<String>(saveFile.getStringSet(message, null));
-        //List<String> names = new ArrayList<String>(saveFile.getStringSet(message+"Names", null));
+        List<String> scores = new ArrayList<>(saveFile.getStringSet(message, null));
 
         for(int i = 0; i<4; i++){
             int index = i;
@@ -39,20 +38,30 @@ public class HighScores extends Activity {
             scores.set(index, scores.get(i));
             scores.set(i, smaller);
         }
-        TextView t = (TextView) findViewById(R.id.textView1);
-        t.setText(scores.get(4));
+        TextView tName = (TextView) findViewById(R.id.textViewName0);
+        TextView tScore = (TextView) findViewById(R.id.textViewScore0);
+        tName.setText(scores.get(4).replaceAll("[^A-Za-z]", ""));
+        tScore.setText(scores.get(4).replaceAll("[^0-9]", ""));
 
-        t = (TextView) findViewById(R.id.textView2);
-        t.setText(scores.get(3));
+        tName = (TextView) findViewById(R.id.textViewName1);
+        tScore = (TextView) findViewById(R.id.textViewScore1);
+        tName.setText(scores.get(3).replaceAll("[^A-Za-z]", ""));
+        tScore.setText(scores.get(3).replaceAll("[^0-9]", ""));
 
-        t = (TextView) findViewById(R.id.textView3);
-        t.setText(scores.get(2));
+        tName = (TextView) findViewById(R.id.textViewName2);
+        tScore = (TextView) findViewById(R.id.textViewScore2);
+        tName.setText(scores.get(2).replaceAll("[^A-Za-z]", ""));
+        tScore.setText(scores.get(2).replaceAll("[^0-9]", ""));
 
-        t = (TextView) findViewById(R.id.textView4);
-        t.setText(scores.get(1));
+        tName = (TextView) findViewById(R.id.textViewName3);
+        tScore = (TextView) findViewById(R.id.textViewScore3);
+        tName.setText(scores.get(1).replaceAll("[^A-Za-z]", ""));
+        tScore.setText(scores.get(1).replaceAll("[^0-9]", ""));
 
-        t = (TextView) findViewById(R.id.textView5);
-        t.setText(scores.get(0));
+        tName = (TextView) findViewById(R.id.textViewName4);
+        tScore = (TextView) findViewById(R.id.textViewScore4);
+        tName.setText(scores.get(0).replaceAll("[^A-Za-z]", ""));
+        tScore.setText(scores.get(0).replaceAll("[^0-9]", ""));
     }
 
 }
