@@ -45,9 +45,13 @@
 
 <p>Positive signed numbers are identical to positive unsigned integers. Signed numbers can be converted from positive to negative by inverting each bit (changing zeros to ones and ones to zeros) and then adding 1 to the value. Conversion from negative to positive is the same in reverse.</p>
 
-<p>(Floating point)</p>
+<p>Floating point numbers are a way to represent very large and very small numbers, including non-integer values. They are in a similar format to scientific notation:</p>
 
-<p>Overflow occurs when trying to (for instance, trying to represent a number greater than 15 as a 4-bit integer). </p>
+<section>(-1)<sup>(signed bit)</sup> × a × 2<sup>b</sup></section>
+
+<p>where <code>a</code> is a normalized decimal number in the range [1, 10) and <code>b</code> is the exponent. Note that the base of the exponent is 2 whereas scientific notation uses a base of 10. The floating point standard uses the highest order bit to store the sign, the next 8 bits to store the exponent, and the remaining 23 bits to store the value for <code>a</code> (with the decimal point removed). The exponent is stored with 127 added to it so that the stored value is always non-negative but the value used in calculations has a normal range of positive and negative numbers.</p>
+
+<p>Overflow occurs when trying to represent a number outside of range. For instance, an unsigned 4-bit integer can hold numbers in the range [0, 15]. The value 16 is represented as 10000 in binary, which requires 5 bits and therefore cannot be represented in 4 bits. Overflow can occur when adding or subtracting numbers and the result goes out of range. Similarly, underflow can also happen for floating point operations when a number becomes too close to zero for floating point to represent.</p>
 
 </body>
 </html>
