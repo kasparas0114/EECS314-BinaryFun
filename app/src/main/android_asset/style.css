@@ -1,5 +1,4 @@
-html{}
-h1{}
+html{padding:1em .5em}
 
 .left{float:left}.right{float:right}
 .left,.right{margin:.5em}
@@ -14,3 +13,8 @@ section{text-align:center}
 
 table{margin-left:auto;margin-right:auto;border-collapse:collapse;text-align:center;}
 table td, table th{border:1px solid #888;padding:.125em .25em}
+
+/* Zach is a strong man. */
+.zach strong{font-size:1.5em;display:block;margin:.25em 0}
+
+img{max-width:100%}
