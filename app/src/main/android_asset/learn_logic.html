@@ -8,9 +8,56 @@
 
 </head>
 
-<body>
+<body class="zach">
 
-<h1>Learn Boolean Logic</h1>
+<h1>Learn About Boolean Logic</h1>
+<p>Boolean logic is the foundation of our society. Imagine if everything you said was either true or false. How would you communicate with others? <strong>By using boolean logic, of course!</strong></p>
+
+<p>First, let&rsquo;s cover the AND statement, which has the following truth table:</p>
+	
+	<table>
+		<tr><th colspan="3">AND table</th></tr>
+		<tr><th>A</th><th>B</th><th>Output</th></tr>
+		<tr><td>0</td>	<td>0</td>	<td>0</td></tr>
+		<tr><td>0</td>	<td>1</td>	<td>0</td></tr>
+		<tr><td>1</td>	<td>0</td>	<td>0</td></tr>
+		<tr><td>1</td>	<td>1</td>	<td>1</td></tr>
+	</table>
+
+    <p>In the table above, zero is equivalent to false and one is equivalent to true. You know the old adage: two wrongs don&rsquo;t make a right. Well, boolean logic can prove this statement. Consider: you make two false statements which are represented by the letters A and B.</p>
+    
+	<blockquote>A: Humans live on Mars.<br>
+    B: I hate pizza.<br>
+    (B is false because no one hates pizza.)</blockquote>
+
+<p>Look at the Row of the table where both A and B are equal to 0. This means that if you were to say out loud &ldquo;Humans live on Mars AND I hate pizza&rdquo;, <strong>YOU WOULD BE WRONG!</strong></p>
+
+<p>Remember, zero is equal to false. So buy combining statement A and B together with AND, we get a false statement. Now let's consider a false statement and a true statement.</p>
+
+<blockquote>A: Humans live on Earth.<br>
+	B: I hate pizza.</blockquote>
+
+<p>Look at the Row of the table where A is equal to 1 and B is equal to 0. This means that if you were to say out loud, &ldquo;Humans live on Earth AND I hate pizza&rdquo;, <strong>YOU WOULD STILL BE WRONG!</strong></p>
+
+<p>In fact, the only way you would be right is if both statements were true. If you said something like &ldquo;Humans live on Earth AND I like pizza&rdquo;, <strong>THEN YOU WOULD BE RIGHT!</strong> In this case, you would look at the truth table for the row that has both A and B equal to 1, and see that the result is 1.</p>
+
+<p>Now, lets look at the truth table for OR! </p>
+
+	<table>
+		<tr><th colspan="3">OR table</th></tr>
+		<tr><th>A</th><th>B</th><th>Output</th></tr>
+		<tr><td>0</td>	<td>0</td>	<td>0</td></tr>
+		<tr><td>0</td>	<td>1</td>	<td>1</td></tr>
+		<tr><td>1</td>	<td>0</td>	<td>1</td></tr>
+		<tr><td>1</td>	<td>1</td>	<td>1</td></tr>
+	</table>
+
+<p>Again, consider the statements A and B.</p>
+
+<blockquote>A: Humans live on Earth.<br>
+    B: I hate pizza.</blockquote>
+
+    <p>If you were to say &ldquo;Humans live on Earth OR I hate pizza&ldquo;, would you be wrong or right? Well, technically, you would be right about statement A but wrong about statement B. Luckily for us, we used the OR operator. When using the OR operator, if any of the statements used in the expression is correct, then so is the expression. In the case above, &ldquo;Humans live on Earth OR I hate pizza&rdquo; is a true statement! This can be verified by looking in the truth table where A is equal 1 and B is equal to 0. Notice that the result is 1, which means the statement is true!</p>
 
 </body>
 </html>
