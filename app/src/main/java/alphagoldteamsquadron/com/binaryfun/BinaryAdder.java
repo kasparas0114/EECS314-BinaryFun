@@ -17,6 +17,8 @@ import java.text.DecimalFormat;
  * Created by Drew Mitchell on 4/15/15.
  */
 public class BinaryAdder extends Activity {
+    //Name of minigame goes here
+    public static final String SCORE_VALUE = "BinaryAdderValues";
 
     private int valueA = 0;
     private int valueB = 0;
@@ -170,6 +172,10 @@ public class BinaryAdder extends Activity {
         TextView currentText = (TextView) findViewById(R.id.statusText);
         enableToggles(false);
         currentText.setText("You win!");
+
+        /* TODO: implement scoring on this game. I may wait until after the presentation to do so.
+        int score = 200000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
+        new SaveScore(this, SCORE_VALUE, score); */
     }
 
 
