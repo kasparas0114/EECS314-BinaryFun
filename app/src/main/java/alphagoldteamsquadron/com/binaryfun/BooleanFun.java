@@ -20,6 +20,7 @@ public class BooleanFun extends Activity {
     private Button[] buttonBoolOps;
     private ColorStateList defaultButtonTextColors;
     private enum boolOpType {OR,AND,NAND,NOR,XOR,XNOR}
+    private static final String SCORE_VALUE = "BooleanFunValues";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,9 @@ public class BooleanFun extends Activity {
             if(checkWinConditions()) { // check winning conditions here
                 //handle win event
                 winLossText.setText("You Won! Great job!");
+                int score = generateScore(
+                        200000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase())));
+                new SaveScore(this, SCORE_VALUE, score);
             }
             else {
                 //handle loss
@@ -256,49 +260,89 @@ public class BooleanFun extends Activity {
         //  4   5
         //    8
 
-        //long and complicated loop to take away portions
-        for(int totalTaken = 0 ; totalTaken < 6 ; ) {
-            int generatedNum = myRand.nextInt(9);
+        //Take numbers/ operators away from the first triad
+        while(toTakeFromTriad3 > 0)
+        {
+            int generatedNum = myRand.nextInt(3);
+            switch(generatedNum) {
+                case 0:
+                    if(!buttonBooleans[4].getText().toString().equals("")) {
+                        toTakeFromTriad3--;
+                        toTakeFromTriad1--;
+                        buttonBooleans[4].setText("");
+                        buttonBooleans[4].setClickable(true);
+                        buttonBooleans[4].setTextColor(
+                                getResources().getColor(android.R.color.holo_green_dark));
+                    }
+                    break;
+                case 1:
+                    if(!buttonBooleans[5].getText().toString().equals(""))
+                    {
+                        toTakeFromTriad3--;
+                        toTakeFromTriad2--;
+                        buttonBooleans[5].setText("");
+                        buttonBooleans[5].setClickable(true);
+                        buttonBooleans[5].setTextColor(
+                                getResources().getColor(android.R.color.holo_green_dark));
+                    }
+                    break;
+                case 2:
+                    if(!buttonBoolOps[2].getText().toString().equals(""))
+                    {
+                        toTakeFromTriad3--;
+                        buttonBoolOps[2].setText("");
+                        buttonBoolOps[2].setClickable(true);
+                        buttonBoolOps[2].setTextColor(
+                                getResources().getColor(android.R.color.holo_green_dark));
+                    }
+                    break;
+                default:
+                    throw new RuntimeException(
+                            "generated num should not be less than 0 or greater than 2");
+            }
+        }
+
+        //long and complicated/real nasty loop to take away portions of the tree for the user to
+        //fill in
+        while(toTakeFromTriad2 > 0 || toTakeFromTriad1 > 0 ) {
+            int generatedNum = myRand.nextInt(8);
             boolean found = false;
 
             switch(generatedNum) {
                 case 0:
                 case 1:
+                    if(toTakeFromTriad1 > 0 &&
+                            !buttonBooleans[generatedNum].getText().toString().equals("")) {
+                        toTakeFromTriad1--;
+                        found = true;
+                    }
+                    break;
                 case 6:
-                    if (toTakeFromTriad1 > 0) {
+                    if (toTakeFromTriad1 > 0 &&
+                            !buttonBoolOps[generatedNum-6].getText().toString().equals("")) {
                         toTakeFromTriad1--;
                         found = true;
                     }
                     break;
                 case 2:
                 case 3:
+                    if (toTakeFromTriad2 > 0 &&
+                            !buttonBooleans[generatedNum].getText().toString().equals("")) {
+                        toTakeFromTriad2--;
+                        found = true;
+                    }
+                    break;
                 case 7:
-                    if (toTakeFromTriad2 > 0) {
+                    if (toTakeFromTriad2 > 0 &&
+                            !buttonBoolOps[generatedNum-6].getText().toString().equals("")) {
                         toTakeFromTriad2--;
                         found = true;
                     }
                     break;
+
                 case 4:
-                    if (toTakeFromTriad1 > 0 && toTakeFromTriad3 > 0) {
-                        toTakeFromTriad3--;
-                        toTakeFromTriad1--;
-                        totalTaken++; //add an additional taken
-                        found = true;
-                    }
-                    break;
                 case 5:
-                    if (toTakeFromTriad2 > 0 && toTakeFromTriad3 > 0) {
-                        toTakeFromTriad3--;
-                        toTakeFromTriad2--;
-                        totalTaken++; //add an additional taken
-                        found = true;
-                    }
-                    break;
-                case 8:
-                    if (toTakeFromTriad3 > 0) {
-                        toTakeFromTriad3--;
-                        found = true;
-                    }
+                    //already taken care of in previous loop
                     break;
                 default:
                     throw new RuntimeException(
@@ -306,7 +350,6 @@ public class BooleanFun extends Activity {
             }
 
             if(found) {
-                totalTaken++;
                 if(generatedNum >= 6){
                     buttonBoolOps[generatedNum-6].setText("");
                     buttonBoolOps[generatedNum-6].setClickable(true);
@@ -351,6 +394,36 @@ public class BooleanFun extends Activity {
                 boolOpStringToEnum(boolOp),
                 intStringToBool(secondBool)
         );
+    }
+
+    //Generates the score for the game
+    public int generateScore(int baseScore) {
+        for(int i = 0 ; i < buttonBoolOps.length; i++) {
+            switch(buttonBoolOps[i].getText().toString())
+            {
+                case "XNOR":
+                    baseScore += 1000;
+                    break;
+                case "XOR":
+                    baseScore += 750;
+                    break;
+                case "AND":
+                    baseScore += 250;
+                    break;
+                case "OR":
+                    baseScore += 100;
+                    break;
+                case "NAND":
+                    baseScore += 500;
+                    break;
+                case "NOR":
+                    baseScore += 250;
+                    break;
+                default:
+                    throw new IllegalArgumentException("BoolOp cannot be null");
+            }
+        }
+        return baseScore;
     }
 
     //Check if the player has won the game
