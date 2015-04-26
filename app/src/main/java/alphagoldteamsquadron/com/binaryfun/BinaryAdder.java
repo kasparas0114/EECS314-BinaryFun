@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -19,6 +20,10 @@ import java.text.DecimalFormat;
 public class BinaryAdder extends Activity {
     //Name of minigame goes here
     public static final String SCORE_VALUE = "BinaryAdderValues";
+
+    // Keep track of 5 rounds per game.
+    private int roundCount = 1;
+    private int maxRounds = 5;
 
     private int valueA = 0;
     private int valueB = 0;
@@ -76,6 +81,18 @@ public class BinaryAdder extends Activity {
     }
 
     public void startBinaryGame(View view) {
+
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
+
+        startRound();
+
+        Button startButton = (Button) findViewById(R.id.StartButton);
+        startButton.setText("New Game");
+    }
+
+
+    public void startRound() {
         valueA = (int)(Math.random() * 256);
         valueB = (int)(Math.random() * 256);
 
@@ -85,16 +102,11 @@ public class BinaryAdder extends Activity {
         enableToggles(true);
         zeroToggles();
 
-
-
-        chronometer.setBase(SystemClock.elapsedRealtime());
-        chronometer.start();
-
-
-        // Clear the "you won" message
+        // Update the number of rounds
         TextView currentText = (TextView) findViewById(R.id.statusText);
-        currentText.setText("");
+        currentText.setText("Round " + roundCount + " of " + maxRounds);
     }
+
     public void onToggleClicked(View view) {
         boolean on = ((ToggleButton) view).isChecked();
 
@@ -168,20 +180,25 @@ public class BinaryAdder extends Activity {
     }
 
     private void win(){
-        chronometer.stop();
-        TextView currentText = (TextView) findViewById(R.id.statusText);
-        enableToggles(false);
-        currentText.setText("You win!");
+        if (roundCount == maxRounds) {
+            chronometer.stop();
+            TextView currentText = (TextView) findViewById(R.id.statusText);
+            enableToggles(false);
+            currentText.setText("You win!");
 
-        /* TODO: implement scoring on this game. I may wait until after the presentation to do so.
-        int score = 200000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
-        new SaveScore(this, SCORE_VALUE, score); */
+
+            int score = 200000 - ((int)(SystemClock.elapsedRealtime()-chronometer.getBase()));
+            new SaveScore(this, SCORE_VALUE, score);
+        } else {
+            roundCount++;
+            startRound();
+        }
     }
 
 
     /** Update the text views (bits) for a specific array (number) to the specified value. */
     private void updateAddend(TextView[] bits, int value) {
-        // Convert decimal value to 8-bit binary number
+        // Convert decimal value to 8-bit binary number, including the leading zeros
         String binary = String.format("%8s", Integer.toBinaryString(value)).replace(' ', '0');
 
         // Both the passed in value and the text views should have the same number of bits
