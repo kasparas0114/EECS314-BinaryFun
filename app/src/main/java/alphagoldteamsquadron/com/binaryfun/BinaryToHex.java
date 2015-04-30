@@ -162,7 +162,7 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
     }
 
     public void win() {
-        if(roundCount == 1) {
+        if(roundCount == 5) {
             chronometer.stop();
             TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
             currentText.setText("You win!");
