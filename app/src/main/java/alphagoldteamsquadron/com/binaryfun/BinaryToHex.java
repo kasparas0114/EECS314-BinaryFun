@@ -38,10 +38,10 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
         s.setOnItemSelectedListener(this);
         s = (Spinner)findViewById(R.id.spinner2);
         s.setOnItemSelectedListener(this);
-        s = (Spinner)findViewById(R.id.spinner3);
+        /*s = (Spinner)findViewById(R.id.spinner3);
         s.setOnItemSelectedListener(this);
         s = (Spinner)findViewById(R.id.spinner4);
-        s.setOnItemSelectedListener(this);
+        s.setOnItemSelectedListener(this);*/
     }
 
     public void initialize(){
@@ -53,12 +53,12 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
         s = (Spinner) findViewById(R.id.spinner2);
         s.setEnabled(false);
         s.setAdapter(adapter);
-        s = (Spinner) findViewById(R.id.spinner3);
+        /*s = (Spinner) findViewById(R.id.spinner3);
         s.setEnabled(false);
         s.setAdapter(adapter);
         s = (Spinner) findViewById(R.id.spinner4);
         s.setEnabled(false);
-        s.setAdapter(adapter);
+        s.setAdapter(adapter);*/
     }
 
     public void startGame(View view) {
@@ -72,7 +72,7 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
     }
 
     public void roundReset() {
-        value = (int)(Math.random() * 65536);
+        value = (int)(Math.random() * 256);
         TextView valueText = (TextView)findViewById(R.id.textViewTargetValue);
         valueText.setText(Integer.toString(value));
 
@@ -83,12 +83,12 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
         s = (Spinner) findViewById(R.id.spinner2);
         s.setEnabled(true);
         s.setSelection(0);
-        s = (Spinner) findViewById(R.id.spinner3);
+        /*s = (Spinner) findViewById(R.id.spinner3);
         s.setEnabled(true);
         s.setSelection(0);
         s = (Spinner) findViewById(R.id.spinner4);
         s.setEnabled(true);
-        s.setSelection(0);
+        s.setSelection(0);*/
 
         TextView roundText = (TextView) findViewById(R.id.textViewRoundValue);
         roundText.setText(Integer.toString(roundCount) + " of 5");
@@ -142,12 +142,12 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
         int spinner1Value = getHexValue(s1.getSelectedItem().toString());
         Spinner s2 = (Spinner)findViewById(R.id.spinner2);
         int spinner2Value = getHexValue(s2.getSelectedItem().toString());
-        Spinner s3 = (Spinner)findViewById(R.id.spinner3);
+        /*Spinner s3 = (Spinner)findViewById(R.id.spinner3);
         int spinner3Value = getHexValue(s3.getSelectedItem().toString());
         Spinner s4 = (Spinner)findViewById(R.id.spinner4);
-        int spinner4Value = getHexValue(s4.getSelectedItem().toString());
+        int spinner4Value = getHexValue(s4.getSelectedItem().toString());*/
 
-        current = spinner1Value + spinner2Value * 16 + spinner3Value * 16 * 16 + spinner4Value * 16 * 16 * 16;
+        current = spinner1Value + spinner2Value * 16; //+ spinner3Value * 16 * 16 + spinner4Value * 16 * 16 * 16;
 
         TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
         currentText.setText(Integer.toString(current));
@@ -162,7 +162,7 @@ public class BinaryToHex extends Activity implements AdapterView.OnItemSelectedL
     }
 
     public void win() {
-        if(roundCount == 1) {
+        if(roundCount == 5) {
             chronometer.stop();
             TextView currentText = (TextView) findViewById(R.id.textViewCurrentValue);
             currentText.setText("You win!");
