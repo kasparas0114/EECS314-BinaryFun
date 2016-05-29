@@ -98,17 +98,22 @@ We added a quit button in the end so the user could quit the application.
 ## Logical View
 The Logical view main purpose in the software architecture of a system is to describe the functionality, that system provides to users, giving the static view of an application. As a tool to represent it, we used Class Diagram. Class diagrams are mainly used for objective oriented programming, because it can be directly mapped to the language. It helps us to analyse the system and to describe all responsibilities of a system. 
 On logical view it is comfortable to add new features to a system. As we decided before to add multiplayer mode to a system, as a solution we chose open source JXTA (Juxtapose) peer-to-peer protocol.
+
 ![Image of Class Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ClassDiagram.jpg)
 
 ## Process View
 The Process view is responsable about dynamic aspect of the system. It explains the communication between system processes and key concepts needed to describe what happens in the development process, on what, when it happens, and why. Tools used for process view modeling is Activity Diagram. In the application we are improving and analysing, we separated everything to 3 main activities.
 The first one is the main one, when user opens an application, he can pick on of three selections - Multiplayer mode, Tutorials and Single player mode. So there is a switch with 3 different routes and end states.
-![Image of Main Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMain.jpg)
-Second one, is the singleplayer mode activity, where user can choose only one route - pick a game, play it and submit a highscore, going all the way to the final state. 
-![Image of Single Player Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramSinglePlayer.jpg)
-And last but not least, multiplayer mode activity, where user can create a room, play with a random player, or join the existing room.
-![Image of Multiplayer Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMultiplayer.jpg)
 
+![Image of Main Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMain.jpg)
+
+Second one, is the singleplayer mode activity, where user can choose only one route - pick a game, play it and submit a highscore, going all the way to the final state. 
+
+![Image of Single Player Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramSinglePlayer.jpg)
+
+And last but not least, multiplayer mode activity, where user can create a room, play with a random player, or join the existing room.
+
+![Image of Multiplayer Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMultiplayer.jpg)
 
 
 **Contributions**
