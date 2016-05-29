@@ -1,1 +1,105 @@
-Here will be final report
+
+<h1>BinaryFun</h1>
+
+**Index**
+
+[Description](#description)
+
+[New Features](#new-features) 
+
+[Requirements](#requirements)
+
+ 
+Software Architecture:
+ 
+  [Logical View](#logical-view)
+ 
+ [Process View](#process-view)
+	 
+ [Implementation View](#implementation-view)
+	 
+ [Deployment View](#deployment-view)
+	 
+ [Use Case](#use-case)
+ 
+
+## Description
+BinaryFun is an Android Application game that has an educational purpose.
+
+![Image of Application](http://imageshack.com/a/img922/580/9fKEHJ.png)
+
+When you opened the original application you would have access to game modes such as Binary Adder, Binary to Decimal, Binary to Hexadecimal and Boolean Fun. With our new features when you access the application you have to choose the Player Mode first (Single Player or Multi Player) and then you will go to a menu where you can choose between tutorials or game modes.
+The games consist in timed exercises in which you a have to make calculus, depending on the game mode you choose. 
+
+
+**Binary Adder**
+
+Binary Adder is a simple adding game where you have 5 rounds and a timer. 
+In each round you are given two binary numbers to sum and once you insert the correct result you immediatly pass to the next round.
+The least time you take to pass the 5 rounds the bigger score you achieve and if you get stuck on a round you can always start a new game!
+In Multiplayer mode the player which has a bigger score wins!
+
+![Image of Binary Adder](http://imageshack.com/a/img921/6862/9FkPuk.png)
+
+
+**Binary To Decimal and Binary To Hex**
+
+Binary To Decimal and Binary To Hex are conversion games where it's given a target number in decimal base and you need to insert the correct conversion to binary or hexadecimal respectively. 
+Similarly to BinaryAdder you have 5 rounds and a timer. The score is obtained upon completion of the 5 rounds and with the time spent to do so.
+In Multiplayer mode the player which finishes the 5 rounds first wins!
+
+![Image of BtD & BtH](http://s33.postimg.org/exyegt66n/Deepin_Screenshot20160528190542.png)
+
+
+**Boolean Fun**
+
+Boolean Fun is a game where it's given a boolean tree and, unlike the other games described so far, it doesn't have 5 rounds nor only one correct solution to the challenge given to you. 
+There are different solutions to the same boolean tree so your task is to finish as fast as you can and the best way to do so is to seek for the simplest solution. Whenever you are ready just press the 'Done' button and check your solution.
+In Multiplayer mode the player which finishes in the smallest amount of time wins!
+
+![Image of BooleanFun](http://s33.postimg.org/nkyqscdqn/Deepin_Screenshot20160327134109.png)
+
+
+There is a score and a table of high scores.
+
+![Image of Highscore Table](http://imageshack.com/a/img922/6553/I1QOQ2.png)
+
+
+If you have any doubts about the games you can access Learn Binary, Learn Logic, Learn Arithmetic and Learn Representations for more explanations and help.
+
+![Image of Learn](http://imageshack.com/a/img922/5359/MyYr4S.png)
+
+
+## Requirements
+
+Since it's an Android Application it is implemented in Java, tutorials view are made by HTML and css and it uses Gradle to build the project. 
+To run it you need an Android environment, like a smartphone with a software version Android API 21, also known as Lollipop.
+To compile the whole project you need 
+	
+	internal_impl-22.0.0.jar
+
+	classpath 'com.android.tools.build:gradle:1.1.0'
+	
+which are the libraries of gradle to build the project and an Android's library.
+
+
+**Git and BinaryFun**
+
+In GitHub, the description of the commits show us what functionalities have been added or what problems were fixed.
+To make a commit you have to fork the original repository. When you make a change that is usefull to the project you make a pull request and the ''master'' decides if he wants to add your changes to the project or not.
+
+
+## New Features
+
+We decided to add some features to the game in order to make it more complete and to turn it into a client-server application.
+We added the feature of multiplayer. This feature would allow us to implement a network package, necessary in client-server applications. 
+We added a quit button in the end so the user could quit the application.
+
+**Contributions**
+
+Kasparas Stadalnikas (201509821) - 50%
+
+Vytautas Nekraševičius (201509869) - 50%
+
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
