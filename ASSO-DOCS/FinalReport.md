@@ -12,15 +12,15 @@
  
 Software Architecture:
  
-  [Logical View](#logical-view)
+ [Logical View](#logical-view)
  
  [Process View](#process-view)
 	 
- [Implementation View](#implementation-view)
+ [Development View](#development-view)
 	 
- [Deployment View](#deployment-view)
+ [Physical View](#physical-view)
 	 
- [Use Case](#use-case)
+ [Scenarios](#scenarios)
  
 
 ## Description
@@ -115,8 +115,26 @@ And last but not least, multiplayer mode activity, where user can create a room,
 
 ![Image of Multiplayer Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMultiplayer.jpg)
 
-##Implementation View
+##Development View
+The development view illustrates a system from porgrammer's perspective, it is all about software management. This view uses UML Component diagram to describe system components. It is primarily for developers who will be building the software.
+In our diagrams we show dependencies and relationships between modules and how they are organized.
+Our application's engine is using Database service, Juxtapose Service, Game module and android as an operating system for this application.
 
+![Image of Component Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ComponentDiagram.jpg)
+
+##Physical View
+The physical view describes the system from a system engineer's point of view. How sofware and hardware are connected to each other. What our system nodes (harware or sofware) are dependent on. UML diagram we used to analyse this view is Deployment Diagram. So at first, game is dependent on database and contrary.
+
+![Image of Deployment Diagram Game Database] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/DeploymentGameDatabase.jpg)
+
+The second one deployment diagram we did, was to describe, how multiplayer game works, so there are 2 peers, connected to eachother, they are both using a server, which is using a database.
+
+![Image of Deploment Multiplayer Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/DeploymentMultiplayer.jpg)
+
+##Scenarios
+This part of 4+1 architectural view model, is an ilustration of an architecture. In this part we described sequences of interactions between objects and processes. For this view, we were using UML Use-case Diagrams. Using use-case diagrams it is easy for everyone to understand, how this application is intended to be used.
+
+![Image of Use-Case Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/UseCaseDiagram.jpg)
 **Contributions**
 
 Kasparas Stadalnikas (201509821) - 50%
