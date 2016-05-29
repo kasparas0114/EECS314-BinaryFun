@@ -95,6 +95,9 @@ We decided to add some features to the game in order to make it more complete an
 We added the feature of multiplayer. This feature would allow us to implement a network package, necessary in client-server applications. 
 We added a quit button in the end so the user could quit the application.
 
+## Logical View
+The Logical view main purpose in the software architecture of a system is to describe the functionality, that system provides to users, giving the static view of an application. As a tool to represent it, we used Class Diagram. Class diagrams are mainly used for objective oriented programming, because it can be directly mapped to the language. It helps us to analyse the system and to describe all responsibilities of a system. 
+On logical view it is comfortable to add new features to a system. As we decided before to add multiplayer mode to a system, as a solution we chose open source JXTA (Juxtapose) peer-to-peer protocol.
 **Contributions**
 
 Kasparas Stadalnikas (201509821) - 50%
