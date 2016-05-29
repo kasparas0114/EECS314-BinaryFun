@@ -115,6 +115,7 @@ And last but not least, multiplayer mode activity, where user can create a room,
 
 ![Image of Multiplayer Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMultiplayer.jpg)
 
+##Implementation View
 
 **Contributions**
 
