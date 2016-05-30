@@ -118,7 +118,7 @@ And last but not least, multiplayer mode activity, where user can create a room 
 ##Development View
 The development view illustrates a system from porgrammer's perspective, it is all about software management. This view uses UML Component diagram to describe system components. It is primarily for developers who will be building the software.
 In our diagrams we show dependencies and relationships between modules and how they are organized.
-Our application's engine is using Database service, Juxtapose Service, Game module and android as an operating system to lounch and se this application.
+Our application's engine is using Database service, Juxtapose Service, Game module and android as an operating system to lounch and use this application.
 
 ![Image of Component Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ComponentDiagram.jpg)
 
