@@ -96,14 +96,14 @@ We added the feature of multiplayer. This feature would allow us to implement a 
 We added a quit button in the end so the user could quit the application.
 
 ## Logical View
-The Logical view main purpose in the software architecture of a system is to describe the functionality, that system provides to users, giving the static view of an application. As a tool to represent it, we used Class Diagram. Class diagrams are mainly used for objective oriented programming, because it can be directly mapped to the language. It helps us to analyse the system and to describe all responsibilities of a system. 
+The Logical view main purpose in the software architecture of a system is to describe the functionality that system provides to users, giving the static view of an application. As a tool to represent it, we used UML Class Diagram. Class diagrams are mainly used for objective oriented programming, because it can be directly mapped to the language. It helps us to analyse the system and to describe all responsibilities of a system. 
 On logical view it is comfortable to add new features to a system. As we decided before to add multiplayer mode to a system, as a solution we chose open source JXTA (Juxtapose) peer-to-peer protocol.
 
 ![Image of Class Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ClassDiagram.jpg)
 
 ## Process View
-The Process view is responsable about dynamic aspect of the system. It explains the communication between system processes and key concepts needed to describe what happens in the development process, on what, when it happens, and why. Tools used for process view modeling is Activity Diagram. In the application we are improving and analysing, we separated everything to 3 main activities.
-The first one is the main one, when user opens an application, he can pick on of three selections - Multiplayer mode, Tutorials and Single player mode. So there is a switch with 3 different routes and end states.
+The Process view is responsible about dynamic aspect of the system. It explains the communication between system processes and key concepts needed to describe what happens in the development process, when it happens, and why. Tool used for process view modeling is UML Activity Diagram. In the application we are improving and analysing, we separated everything to 3 main activities.
+The first one is the main one, when user opens an application, he can pick one out of three selections - Multiplayer mode, Tutorials and Single player mode. So there is a switch with 3 different routes and end states.
 
 ![Image of Main Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMain.jpg)
 
@@ -111,19 +111,19 @@ Second one, is the singleplayer mode activity, where user can choose only one ro
 
 ![Image of Single Player Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramSinglePlayer.jpg)
 
-And last but not least, multiplayer mode activity, where user can create a room, play with a random player, or join the existing room.
+And last but not least, multiplayer mode activity, where user can create a room waiting for an opponent, play with a random player, or join the existing room.
 
 ![Image of Multiplayer Activity Diagram](https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ActivityDiagramMultiplayer.jpg)
 
 ##Development View
 The development view illustrates a system from porgrammer's perspective, it is all about software management. This view uses UML Component diagram to describe system components. It is primarily for developers who will be building the software.
 In our diagrams we show dependencies and relationships between modules and how they are organized.
-Our application's engine is using Database service, Juxtapose Service, Game module and android as an operating system for this application.
+Our application's engine is using Database service, Juxtapose Service, Game module and android as an operating system to lounch and se this application.
 
 ![Image of Component Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ComponentDiagram.jpg)
 
 ##Physical View
-The physical view describes the system from a system engineer's point of view. How sofware and hardware are connected to each other. What our system nodes (harware or sofware) are dependent on. UML diagram we used to analyse this view is Deployment Diagram. So at first, game is dependent on database and contrary.
+The physical view describes the system from a system engineer's point of view. How sofware and hardware are connected to each other. What our system nodes (harware or sofware) are dependent on. UML diagram we used to analyse this view was Deployment Diagram. So at first, game is dependent on database and contrary.
 
 ![Image of Deployment Diagram Game Database] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/DeploymentGameDatabase.jpg)
 
@@ -132,7 +132,7 @@ The second one deployment diagram we did, was to describe, how multiplayer game 
 ![Image of Deploment Multiplayer Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/DeploymentMultiplayer.jpg)
 
 ##Scenarios
-This part of 4+1 architectural view model, is an ilustration of an architecture. In this part we described sequences of interactions between objects and processes. For this view, we were using UML Use-case Diagrams. Using use-case diagrams it is easy for everyone to understand, how this application is intended to be used.
+This part of 4+1 architectural view model, is an illustration of an architecture. In this part we described sequences of interactions between objects and processes. For this view, we were using UML Use-case Diagrams. Using use-case diagrams it is easy for everyone to understand, how this application is intended to be used.
 
 ![Image of Use-Case Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/UseCaseDiagram.jpg)
 **Contributions**
