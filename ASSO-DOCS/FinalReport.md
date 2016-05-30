@@ -123,7 +123,7 @@ Our application's engine is using Database service, Juxtapose Service, Game modu
 ![Image of Component Diagram] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/ComponentDiagram.jpg)
 
 ##Physical View
-The physical view describes the system from a system engineer's point of view. How sofware and hardware are connected to each other. What our system nodes (harware or sofware) are dependent on. UML diagram we used to analyse this view was Deployment Diagram. So at first, game is dependent on database and contrary.
+The physical view describes the system from a system engineer's point of view. How sofware and hardware are connected to each other. What our system nodes (harware or sofware) are dependent on. UML diagram we used to analyse this view was Deployment Diagram. So at first, client is dependent on database and contrary.
 
 ![Image of Deployment Diagram Game Database] (https://github.com/kasparas0114/EECS314-BinaryFun/blob/master/ASSO-DOCS/Diagrams/DeploymentGameDatabase.jpg)
 
